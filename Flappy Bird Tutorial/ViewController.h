@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NSInteger HighScore_Number;
 
+@interface ViewController : UIViewController
+{
+    IBOutlet UILabel *HighScore;
+}
 
 @end
 
