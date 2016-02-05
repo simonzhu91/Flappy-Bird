@@ -23,9 +23,6 @@ NSInteger HighScoreNumber;
     IBOutlet UIImageView * Top;
     IBOutlet UIImageView * Bottom;
     
-    __weak IBOutlet NSLayoutConstraint *TopTunnelHeight;
-    __weak IBOutlet NSLayoutConstraint *BottomTunnelHeight;
-    
     IBOutlet UIButton * StartGame;
     __weak IBOutlet UILabel *ScoreLabel;
     __weak IBOutlet UIButton *Exit;

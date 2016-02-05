@@ -19,22 +19,16 @@
 // Game will increase in difficulty as you continue
 
 // Tunnel Movement Speed Increases
-// Tunnel Heights Increases
 
 @implementation Game
 
-CGFloat TunnelMovementSpeed;
-NSInteger TunnelHeights;
+CGFloat TunnelMovementSpeed = 1;
 
 - (IBAction)StartGame:(id)sender{
     
     StartGame.hidden = YES;
     TunnelTop.hidden = NO;
     TunnelBottom.hidden = NO;
-    
-    // resets TunnelHeights and TunnelMovementSpeed
-    TunnelHeights = 100;
-    TunnelMovementSpeed = 1;
     
     BirdMovement = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(BirdMoving) userInfo:nil repeats:YES];
     
@@ -46,31 +40,15 @@ NSInteger TunnelHeights;
 }
 
 - (void)PlaceTunnels{
-    
-//    [TunnelTop setFrame: CGRectMake(0, 0, 50, 200)];
-//    [TunnelBottom setFrame: CGRectMake(0, 0, 50, 200)];
-
-    // if you go up, y coordinate is negative
-    // if you go down, y coordinate is positive
-    // top left is (0,0) for IOS
-    
-    // image size doesn't matter, it scales it to UIImage
-    
     //y between -228 and 122
-//    RandomTopTunnelPosition = arc4random() % 350;
-//    RandomTopTunnelPosition = RandomTopTunnelPosition - 228;
+    RandomTopTunnelPosition = arc4random() % 350;
+    RandomTopTunnelPosition = RandomTopTunnelPosition - 228;
     
     //change 655 to change game difficulty
-//    RandomBottomTunnelPosition = RandomTopTunnelPosition + 655;
+    RandomBottomTunnelPosition = RandomTopTunnelPosition + 655;
     
-//    TunnelTop.center = CGPointMake(340, RandomTopTunnelPosition);
-//    TunnelBottom.center = CGPointMake(340, RandomBottomTunnelPosition);
-
-    
-    // height of screen is 667
-    [TopTunnelHeight setConstant: TunnelHeights + arc4random() % 50];
-    [BottomTunnelHeight setConstant: TunnelHeights + arc4random() % 50];
-    
+    TunnelTop.center = CGPointMake(340, RandomTopTunnelPosition);
+    TunnelBottom.center = CGPointMake(340, RandomBottomTunnelPosition);
 }
 
 
@@ -109,14 +87,15 @@ NSInteger TunnelHeights;
     
     TunnelTop.center = CGPointMake(TunnelTop.center.x - TunnelMovementSpeed, TunnelTop.center.y);
     TunnelBottom.center = CGPointMake(TunnelBottom.center.x - TunnelMovementSpeed, TunnelBottom.center.y);
-  
+    
+    // if Tunnels go off screen, replace tunnels randomly
+    if(TunnelTop.center.x < -28){
+        [self PlaceTunnels];
+    }
     
     // Tracks the score, we only need 1 Tunnel Top since the tunnels are always above each other
-    if(TunnelTop.center.x <= 0){
+    if(TunnelTop.center.x == 0){
         [self Score];
-        
-        // if Tunnels go off screen, replace tunnels randomly
-        [self PlaceTunnels];
     }
     
     if(CGRectIntersectsRect(Bird.frame, TunnelTop.frame)){
@@ -161,20 +140,9 @@ NSInteger TunnelHeights;
 
 // whenever the gamer has passed through the gap
 - (void) Score {
-    
     ScoreNumber += 1;
     ScoreLabel.text = [NSString stringWithFormat: @"%i", ScoreNumber];
 
-    // adjust tunnelHeights
-    // for now, it is a constant value, but we want a percentage of the screen
-    // if the height is 40% or more of the screen height, we adjust the screen height
-    
-    if(TunnelHeights >= ([[UIScreen mainScreen] bounds].size.height * 0.35)){
-        TunnelHeights = ([[UIScreen mainScreen] bounds].size.height * 0.35);
-    }else{
-        TunnelHeights += 8;
-    }
-    
 }
 
 

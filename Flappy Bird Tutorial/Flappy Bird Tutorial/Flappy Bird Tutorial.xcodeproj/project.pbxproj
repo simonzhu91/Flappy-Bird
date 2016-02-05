@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22CFF24E1C5BC3A1001964CC /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CFF24D1C5BC3A1001964CC /* play.png */; };
 		22D8594C1B085A2D0051DB34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8594B1B085A2D0051DB34 /* main.m */; };
 		22D8594F1B085A2D0051DB34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8594E1B085A2D0051DB34 /* AppDelegate.m */; };
 		22D859521B085A2D0051DB34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D859511B085A2D0051DB34 /* ViewController.m */; };
@@ -34,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22CFF24D1C5BC3A1001964CC /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		22D859461B085A2D0051DB34 /* Flappy Bird Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flappy Bird Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D8594A1B085A2D0051DB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D8594B1B085A2D0051DB34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		22D859491B085A2D0051DB34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22CFF24D1C5BC3A1001964CC /* play.png */,
 				22D8596F1B085A960051DB34 /* Background.png */,
 				22D859701B085A960051DB34 /* Bird Down.png */,
 				22D859711B085A960051DB34 /* Bird Up.png */,
@@ -191,7 +188,6 @@
 				TargetAttributes = {
 					22D859451B085A2D0051DB34 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 4CX8P6N4DY;
 					};
 					22D8595E1B085A2D0051DB34 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -225,7 +221,6 @@
 			files = (
 				22D859751B085A960051DB34 /* Bird Down.png in Resources */,
 				22D859551B085A2D0051DB34 /* Main.storyboard in Resources */,
-				22CFF24E1C5BC3A1001964CC /* play.png in Resources */,
 				22D859771B085A960051DB34 /* GameBackground.png in Resources */,
 				22D859781B085A960051DB34 /* Tunnel.png in Resources */,
 				22D859741B085A960051DB34 /* Background.png in Resources */,
@@ -381,13 +376,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Flappy Bird Tutorial/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -396,13 +388,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Flappy Bird Tutorial/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
